@@ -1,7 +1,6 @@
 import http from 'http';
 import debug from 'debug';
 import { PORT } from '../utils/constants';
-import { initializeDB, closeDB } from './database';
 import { prettyConsole } from '../utils/logger';
 
 const debuger = debug('app:Server');
@@ -43,8 +42,6 @@ const Startup = async (app) => {
     try {
         // awaiting the Promise to Resolve Or reject...
         await initServer(app);
-        debuger('Initializing database module...');
-        await initializeDB();
         debuger(`Server is Live on ${PORT} 🚀`);
     } catch (err) {
         debuger('Server is not running...⚠⚠', err);
@@ -57,8 +54,6 @@ const Shutdown = async (Uncaughtex) => {
     try {
         debuger('Shutting down Server...');
         await close();
-        debuger('Closing database module...');
-        await closeDB();
     } catch (ex) {
         err = err || ex;
         // log with winston Later..:);
