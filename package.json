@@ -11,7 +11,7 @@
 		"dev": "DEBUG=app:* nodemon --exec babel-node ./src/app.js",
 		"clean": "rimraf dist",
 		"build": "babel ./src --out-dir dist",
-		"prod": "npm-run-all clean build start"
+		"prod": "npm-run-all clean build"
 	},
 	"author": "Brahim AFASSY",
 	"license": "ISC",

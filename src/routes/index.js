@@ -7,7 +7,7 @@ import { HOST } from '../utils/constants';
 const route = express.Router();
 // get trendig movies
 route.get('/movies', async (req, res) => {
-    const {page} = req.query;
+    const { page } = req.query;
     const { data } = await axios.get(`${HOST}/trending?page=${page}`);
     const result = getObjectFromHtml($('div #movies', data).children('*'));
     res.status(200).json(result);

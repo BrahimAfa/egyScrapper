@@ -1,0 +1,4 @@
+.eslintrc.json
+.git/
+node_modules/
+.bashrc
