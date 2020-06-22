@@ -1,4 +1,4 @@
-# run "npm run prod" befor executing this FILE
+# run "npm run prod" befor executing this file,
 FROM node:12-alpine
 
 WORKDIR /app
