@@ -7,9 +7,7 @@ COPY package*.json ./
 
 RUN npm i --production
 COPY dist/ ./dist
-
 EXPOSE 3030
-
 ENTRYPOINT [ "npm" ]
 
 CMD ["start"]
