@@ -12,7 +12,7 @@ route.get('/movies', async (req, res) => {
     const result = getObjectFromHtml($('div #movies', data).children('*'));
     res.status(200).json(result);
 });
-// get the url to watch
+// get the url to watch either tv show or movie
 route.get('/watch/:name', async (req, res) => {
     const pathName = req.params.name.includes('ep') ? 'episode' : 'movie';
     const { data } = await axios.get(`${HOST}/${pathName}/${req.params.name}`);
@@ -22,8 +22,8 @@ route.get('/watch/:name', async (req, res) => {
     res.status(200).json({ watch });
 });
 // get seasons
-route.get('/series/:name', async (req, res) => {
-    const { data } = await axios.get(`${HOST}/series/${req.params.name}`);
+route.get('/series/:u', async (req, res) => {
+    const { data } = await axios.get(`${HOST}/series/${req.params.u}`);
     const result = getObjectFromHtml($('div .mbox .movies_small', data).first().children('*'));
     res.status(200).json(result);
 });
@@ -34,6 +34,12 @@ route.get('/season/:name', async (req, res) => {
     res.status(200).json(result);
 });
 
+route.get('/series', async (req, res) => {
+    const { page } = req.query;
+    const { data } = await axios.get(`${HOST}/tv?page=${page}`);
+    const result = getObjectFromHtml($('div #movies', data).children('*'));
+    res.status(200).json(result);
+});
 route.get('/search', async (req, res) => {
     const { q } = req.query;
     const { data } = await axios.get(`${HOST}/autoComplete.php`, {
