@@ -5,7 +5,7 @@
   <br>
 
 ## Description :
-EgyScrapper is an api which filters the important data in the egybest website tou can acces with it all the new movies, series and also get a direct link to watch them. and all that is done 
+EgyScrapper is an api that scrapes the important data in egybest website you can access all the new movies, series and also get a direct link to watch them. and all that is done with this api
 
 ## Installation
 
