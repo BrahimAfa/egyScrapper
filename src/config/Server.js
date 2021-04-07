@@ -42,7 +42,8 @@ const Startup = async (app) => {
     try {
         // awaiting the Promise to Resolve Or reject...
         await initServer(app);
-        debuger(`Server is Live on ${PORT} 🚀`);
+        debuger(`Server is Live on http://localhost:${PORT} 🚀`);
+
     } catch (err) {
         debuger('Server is not running...⚠⚠', err);
         // log err to file Later with Morgan or Winston
