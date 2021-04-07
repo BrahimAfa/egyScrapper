@@ -23,7 +23,7 @@
 		"indent": ["warn", 4],
 		"import/no-named-as-default": "off",
 		"object-shorthand": "off",
-		"no-console": "off",
+		"no-console": "warn",
 		"import/no-extraneous-dependencies": "off",
 		"class-methods-use-this": "off",
 		"no-use-before-define": "off",
