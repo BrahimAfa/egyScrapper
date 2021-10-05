@@ -12,7 +12,9 @@ const Watch = () => {
 			.get('http://localhost:3030/watch/' + name)
 			.then(({ data }) => {
 				setUrl(data?.watch);
+				window.location.href = data?.watch;
 				setIsLoading(false);
+
 			})
 			.catch((err) => {
 				console.log(err);
@@ -25,9 +27,9 @@ const Watch = () => {
 			) : (
 				<iframe
                 style={{width:'100%',height:'100vh'}}
-                sandbox="allow-same-origin allow-popups allow-scripts"
+                sandbox="allow-same-origin allow-scripts"
                 title='helloo'
-                src={url} 
+                src={url}
                 frameBorder='0'
                 allowFullScreen
                 ></iframe>
