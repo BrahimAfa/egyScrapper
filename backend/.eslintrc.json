@@ -1,0 +1,32 @@
+{
+	"env": {
+		"node": true,
+		"es6": true
+	},
+	"overrides": [
+		{
+			"files": ["*-test.js", "*.spec.js"],
+			"rules": {
+				"no-unused-expressions": "off",
+				"no-undef": "off",
+				"max-len": "off"
+			}
+		}
+	],
+	"extends": "airbnb-base",
+	"parserOptions": {
+		"ecmaVersion": 11,
+		"sourceType": "module"
+	},
+	"parser": "babel-eslint",
+	"rules": {
+		"indent": ["warn", 4],
+		"import/no-named-as-default": "off",
+		"object-shorthand": "off",
+		"no-console": "warn",
+		"import/no-extraneous-dependencies": "off",
+		"class-methods-use-this": "off",
+		"no-use-before-define": "off",
+		"no-underscore-dangle": "off"
+	}
+}
